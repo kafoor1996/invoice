@@ -1,0 +1,39 @@
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    $('#next').click(function(){ 
+
+        var value = parseInt(document.getElementById('number').value, 10);
+        value = isNaN(value) ? 0 : value;
+        value++;
+        document.getElementById('number').value = value;
+
+        var no = value;
+
+        $('#iframeHolder').html('<iframe id="iframe" src="https://in.indusviva.com/public/Invoice/PrintInvoiceIndividual.php?vals='+no+'&dd=7370" width="700" height="450"></iframe>');
+        if(!$('#iframe').length) {
+        }
+    });   
+    $('#prev').click(function(){ 
+
+        var value = parseInt(document.getElementById('number').value, 10);
+        value = isNaN(value) ? 0 : value;
+        value--;
+        document.getElementById('number').value = value;
+
+        var no = value;
+
+        $('#iframeHolder').html('<iframe id="iframe" src="https://in.indusviva.com/public/Invoice/PrintInvoiceIndividual.php?vals='+no+'&dd=7370" width="700" height="450"></iframe>');
+        if(!$('#iframe').length) {
+        }
+    });   
+});
+</script>
+
+<input type="text" id="number" value="3498385" hidden/>
+ 
+<button id="next">Next</button>
+<button id="prev">Prev</button>
+<div id="iframeHolder"></div>
+
+ 
