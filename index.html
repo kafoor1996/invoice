@@ -10,7 +10,7 @@ $(function(){
 
         var no = value;
 
-        $('#iframeHolder').html('<iframe id="iframe" src="https://in.indusviva.com/public/Invoice/PrintInvoiceIndividual.php?vals='+no+'&dd=7370" width="700" height="450"></iframe>');
+        $('#iframeHolder').html('<iframe id="iframe" src="https://in.indusviva.com/public/Invoice/PrintInvoiceIndividual.php?vals='+no+'&dd=7370" width="700" height="600"></iframe>');
         if(!$('#iframe').length) {
         }
     });   
@@ -23,17 +23,77 @@ $(function(){
 
         var no = value;
 
-        $('#iframeHolder').html('<iframe id="iframe" src="https://in.indusviva.com/public/Invoice/PrintInvoiceIndividual.php?vals='+no+'&dd=7370" width="700" height="450"></iframe>');
+        $('#iframeHolder').html('<iframe id="iframe" src="https://in.indusviva.com/public/Invoice/PrintInvoiceIndividual.php?vals='+no+'&dd=7370" width="700" height="600"></iframe>');
+        if(!$('#iframe').length) {
+        }
+    });   
+
+    $('#submit').click(function(){ 
+
+        var value = document.getElementById('number').value;
+        
+        var no = value;
+
+        $('#iframeHolder').html('<iframe id="iframe" src="https://in.indusviva.com/public/Invoice/PrintInvoiceIndividual.php?vals='+no+'&dd=7370" width="700" height="600"></iframe>');
         if(!$('#iframe').length) {
         }
     });   
 });
 </script>
+<style>
+html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+.container {
+   min-height:100%;
+   position:relative;
+}
+.header {
+   background:#ff0;
+   padding:10px;
+}
+.body {
+   padding:10px;
+   padding-bottom:60px;   /* Height of the footer */
+}
+.footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
+   background:#6cf;
+}
+button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+</style>
 
-<input type="text" id="number" value="3475385" hidden/>
- 
-<button id="next">Next</button>
-<button id="prev">Prev</button>
-<div id="iframeHolder"></div>
+<div class="container">
+    <input type="text" id="number" value="3475385" disabled/>
+    <div class="header">
+        <button id="next">Next</button>
+        <button id="prev">Prev</button>
+    </div>
+    <div class="body">
+        <div id="iframeHolder"></div>
+    </div>
+    <div class="footer">
+        <input type="text" id="now" value="3475385"/>
+        <button id="submit">Submit</button>
+    </div>
+</div>
+
+
+
 
  
